@@ -8,13 +8,15 @@ import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
 import { RouterModule } from '@angular/router';
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TopicComponent } from './topic/topic.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
     HeroComponent,
-    AppComponent
+    AppComponent,
+    TopicComponent
   ],
   imports: [
     BrowserModule,

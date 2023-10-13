@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TopicService } from '../topic/topics.service';
+
 
 
 
@@ -15,10 +17,16 @@ export class HeroComponent implements OnInit {
     { name: 'travel_4.png', caption: 'Travel_4'},
   ];
 
-  constructor() {}
+  topics: any[] = [];
+
+
+  constructor(private topicServce: TopicService) {}
+
+  // topicIndex: string|null = '';
+
 
   ngOnInit(): void {
-    console.log("hero component initialized")
+    this.topics = this.topicServce.getTopics()
   }
 
 }
