@@ -1,0 +1,17 @@
+#header {
+  display: flex;
+  height: 60px;
+  width: 100%;
+  background-color: green;
+  align-items: center;
+  padding: 8px;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+}
+
+h1 {
+  margin: 8px;
+}
