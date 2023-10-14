@@ -1,7 +1,7 @@
-<mat-card class="tab-card-container">
+<mat-card class="tab-card-wrapper">
   <mat-card-header><h2>Cities</h2></mat-card-header>
 
-  <mat-card-content *ngFor="let city of cities">
+  <mat-card-content class="card-container" *ngFor="let city of cities">
     <mat-card class="city-card" >
       <mat-card-content class="tab-card-content">
         <img mat-card-sm-image src={{city.image}}>

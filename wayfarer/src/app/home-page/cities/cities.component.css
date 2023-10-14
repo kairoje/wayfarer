@@ -1,6 +1,7 @@
-.tab-card-container {
+.tab-card-wrapper {
   background-color: white;
   border: 1px solid black;
+  gap: 15px;
 }
 
 .city-card {

@@ -14,6 +14,16 @@ export class CitiesService {
         id: 1,
         title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
       }] 
+    },
+    {
+      id: 2,
+      name: 'Seattle',
+      country: 'USA',
+      image: "../assets/images/seattle.jpg",
+      posts: [{
+        id: 1,
+        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+      }] 
     }
   ]
 
