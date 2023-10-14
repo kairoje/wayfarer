@@ -9,7 +9,7 @@ import { HeroComponent } from './landing-page/hero/hero.component';
 import { RouterModule } from '@angular/router';
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TopicComponent } from './landing-page/topic/topic.component';
-import { CitiesComponent } from './landing-page/cities/cities.component';
+import { CitiesComponent } from './home-page/cities/cities.component';
 import { MatCardModule } from '@angular/material/card';
 
 
