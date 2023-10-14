@@ -9,6 +9,8 @@ import { HeroComponent } from './landing-page/hero/hero.component';
 import { RouterModule } from '@angular/router';
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TopicComponent } from './landing-page/topic/topic.component';
+import { CitiesComponent } from './landing-page/cities/cities.component';
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
@@ -16,7 +18,8 @@ import { TopicComponent } from './landing-page/topic/topic.component';
     HeaderComponent,
     HeroComponent,
     AppComponent,
-    TopicComponent
+    TopicComponent,
+    CitiesComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,8 @@ import { TopicComponent } from './landing-page/topic/topic.component';
     BrowserAnimationsModule,
     RouterModule,
     NgbModule,
-    NgbCarouselModule
+    NgbCarouselModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

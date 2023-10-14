@@ -1,0 +1,14 @@
+.main-card {
+  background-color: white;
+  border: 1px solid black;
+}
+
+.city-card {
+  color: white;
+}
+
+.tab-card-content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
