@@ -11,6 +11,7 @@ import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TopicComponent } from './landing-page/topic/topic.component';
 import { CitiesComponent } from './home-page/cities/cities.component';
 import { MatCardModule } from '@angular/material/card';
+import { CityDetailsComponent } from './city-details/city-details.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { MatCardModule } from '@angular/material/card';
     HeroComponent,
     AppComponent,
     TopicComponent,
-    CitiesComponent
+    CitiesComponent,
+    CityDetailsComponent
   ],
   imports: [
     BrowserModule,
