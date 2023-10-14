@@ -2,7 +2,7 @@
   background-color: white;
   border: 1px solid black;
   gap: 15px;
-  width: calc(33.333% - 2rem);
+  width: 400px;
   height: 100vh;
   font-family: 'Raleway', 'sans-serif';
 }
