@@ -1,0 +1,15 @@
+<div class="card-container">
+    <mat-card>
+        <mat-card-header>
+            <h2>{{city.name}}</h2>
+            <h4>{{city.country}}</h4>
+        </mat-card-header>
+        <div class="city-details-img"><img mat-card-lg-image src="{{city.image}}" alt=""></div>
+    </mat-card>
+    <div class="post-container">
+        <h2>Posts</h2>
+        <div id="post" *ngFor="let post of city.posts">
+            <h3>{{post.title}}</h3>
+        </div>
+    </div>
+</div>

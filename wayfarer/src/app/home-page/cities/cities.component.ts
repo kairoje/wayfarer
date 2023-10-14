@@ -16,5 +16,7 @@ export class CitiesComponent {
     this.cities = this.citiesService.getCities();
   }
 
-  
+  handleClick() {
+    
+  }
 }
