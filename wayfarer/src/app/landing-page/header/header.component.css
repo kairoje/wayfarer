@@ -10,6 +10,10 @@
 #header img {
   height: 50px;
   margin-right: 1rem;
+  transition: all 0.5s ease;
+}
+#header img:hover, #header img:focus {
+  transform: scale(1.1);
 }
 #header h1 {
   margin: 0;
