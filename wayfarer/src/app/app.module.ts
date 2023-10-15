@@ -16,6 +16,7 @@ import { PostsComponent } from './posts/posts.component';
 
 import { CitiesService } from './home-page/cities/cities.service';
 import { PostService } from './posts/post.service';
+import { PostDetailsComponent } from './post-details/post-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { PostService } from './posts/post.service';
     TopicComponent,
     CitiesComponent,
     CityDetailsComponent,
-    PostsComponent
+    PostsComponent,
+    PostDetailsComponent
   ],
   imports: [
     BrowserModule,

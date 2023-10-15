@@ -4,7 +4,7 @@
       <mat-card-content class="tab-card-content">
         <img mat-card-sm-image src="{{ post.image }}" />
         <mat-card-content class="post-content">
-          <h3>{{ post.title }}</h3>
+        <a [routerLink]="['/post', post.id]"><h3>{{ post.title }}</h3></a>
           <p>{{ post.description }}</p>
         </mat-card-content>
       </mat-card-content>
