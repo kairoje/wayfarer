@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,6 +11,7 @@ export class PostService {
       image: "../assets/images/boy-icon.png",
       title: 'Title',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      creationDate: new Date('2023-10-14T12:30:00'),
       cityId: '1',
     },
     {
@@ -17,6 +19,7 @@ export class PostService {
       image: "../assets/images/girl-icon.png",
       title: 'Title',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      creationDate: new Date('2023-09-12T15:30:00'),
       cityId: '1',
     },
     {
@@ -24,6 +27,7 @@ export class PostService {
       image: "../assets/images/boy-icon.png",
       title: 'Title',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      creationDate: new Date('2023-09-15T11:30:00'),
       cityId: '2',
     },
     {
@@ -31,6 +35,7 @@ export class PostService {
       image: "../assets/images/girl-icon.png",
       title: 'Title',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      creationDate: new Date('2023-10-11T11:30:00'),
       cityId: '2',
     },
     {
@@ -38,6 +43,7 @@ export class PostService {
       image: "../assets/images/girl-icon.png",
       title: 'Title',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      creationDate: new Date('2023-04-25T14:30:00'),
       cityId: '2',
     },
     {
@@ -45,6 +51,7 @@ export class PostService {
       image: "../assets/images/girl-icon.png",
       title: 'Title',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      creationDate: new Date('2023-08-09T17:30:00'),
       cityId: '3',
     },
     {
@@ -52,6 +59,7 @@ export class PostService {
       image: "../assets/images/boy-icon.png",
       title: 'Title',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      creationDate: new Date('2023-08-23T14:30:00'),
       cityId: '4',
     },
   ]
@@ -59,12 +67,10 @@ export class PostService {
   constructor() { 
     
   }
-  getPosts() {
-    return this.posts
-  }
 
   getPostByCityId(id: string) {
-    return this.posts.filter(post => post.cityId === id);
+     const cityPosts = this.posts.filter(post => post.cityId === id);
+     return cityPosts.sort((a, b) => b.creationDate.getTime() - a.creationDate.getTime())
   }
 
 }
