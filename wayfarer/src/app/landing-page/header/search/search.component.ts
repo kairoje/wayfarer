@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CitiesService } from 'src/app/home-page/cities/cities.service';
+import { CitiesService } from '../../../home-page/cities/cities.service';
 
 @Component({
   selector: 'app-search',
@@ -11,11 +11,14 @@ export class SearchComponent {
 
   constructor(private citiesService: CitiesService) { }
 
-  searchCities() {
-    const cities = this.citiesService.getCities();
-
-    const filteredCities = cities.filter(city => city.name.toLowerCase().includes(this.city.toLowerCase()));
-
-    console.log(filteredCities);
+  findCity(cityName: string) {
+    console.log('finding city', cityName);
+    this.citiesService.getCityByName(cityName)
+    .then(city => {
+      console.log('Found city:', city);
+    })
+    .catch(error => {
+      console.error('Error finding city:', error);
+    })
   }
 }
