@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
+import { PostService } from 'src/app/posts/post.service';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class CitiesService {
   private cities = [
     {
@@ -10,32 +12,42 @@ export class CitiesService {
       name: 'Chicago',
       country: 'USA',
       image: "../assets/images/chicago.jpg",
-      posts: [{
-        id: '1',
-        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-      }] 
+      posts: [{}],
     },
     {
       id: '2',
       name: 'Seattle',
       country: 'USA',
       image: "../assets/images/seattle.jpg",
-      posts: [{
-        id: '1',
-        title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-      },
+      posts: [{}],
+    },
     {
-      id: '2',
-      title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
-    }]
+      id: '3',
+      name: 'San Francisco',
+      country: 'USA',
+      image: "../assets/images/san-francisco.png",
+      posts: [{}],
+    },
+    {
+      id: '4',
+      name: 'London',
+      country: 'United Kingdom',
+      image: "../assets/images/london.png",
+      posts: [{}]
     }
   ]
+
+  constructor(private postService: PostService) { }
 
   getCities() {
     return this.cities
   }
 
   getCityById(id: string) {
-    return this.cities.find(city => city.id === id)
+    const city = this.cities.find(city => city.id === id)
+    if (city) {
+      city.posts = this.postService.getPostByCityId(id)
+    }
+    return city
   }
 }

@@ -12,7 +12,10 @@ import { TopicComponent } from './landing-page/topic/topic.component';
 import { CitiesComponent } from './home-page/cities/cities.component';
 import { MatCardModule } from '@angular/material/card';
 import { CityDetailsComponent } from './city-details/city-details.component';
+import { PostsComponent } from './posts/posts.component';
 
+import { CitiesService } from './home-page/cities/cities.service';
+import { PostService } from './posts/post.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ import { CityDetailsComponent } from './city-details/city-details.component';
     AppComponent,
     TopicComponent,
     CitiesComponent,
-    CityDetailsComponent
+    CityDetailsComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,7 @@ import { CityDetailsComponent } from './city-details/city-details.component';
     NgbCarouselModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [CitiesService,PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
