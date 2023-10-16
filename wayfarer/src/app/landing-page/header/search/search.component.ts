@@ -16,6 +16,8 @@ export class SearchComponent {
     return this.router.url != '/'
   }
 
+  
+
   findPost(postTitle: string) {
     console.log('finding post', postTitle);
     this.searchEvent.emit(postTitle);

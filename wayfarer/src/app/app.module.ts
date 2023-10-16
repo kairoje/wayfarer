@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,9 +20,7 @@ import { PostDetailsComponent } from './post-details/post-details.component';
 
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './landing-page/header/search/search.component';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 @NgModule({
   declarations: [
@@ -44,9 +43,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     NgbCarouselModule,
     MatCardModule,
     FormsModule,
-    MatAutocompleteModule,
-    ReactiveFormsModule,
-    MatFormFieldModule
+    HttpClientModule
+
   ],
   providers: [CitiesService,PostService],
   bootstrap: [AppComponent]
