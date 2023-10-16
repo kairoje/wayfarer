@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CitiesService } from '../home-page/cities/cities.service';
+import { CitiesService } from '../cities/cities.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

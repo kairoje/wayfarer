@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HeroComponent } from './landing-page/hero/hero.component';
-import { CityDetailsComponent } from './city-details/city-details.component';
+import { CityDetailsComponent } from './home-page/city-details/city-details.component';
 import { CitiesComponent } from './home-page/cities/cities.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
 
