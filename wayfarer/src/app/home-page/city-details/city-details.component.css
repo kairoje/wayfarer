@@ -3,7 +3,6 @@
     flex-direction: column;
     align-items: space-around;
     width: calc(67% - 2rem);
-    height: 100vh;
 }
 .city-container{
     display: flex;
@@ -15,6 +14,7 @@ mat-card {
     display: flex;
     flex-direction: column;
     background-color: white;
+    height: 100vh;
 }
 mat-card .city{
     display: flex;
