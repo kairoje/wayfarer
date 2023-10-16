@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,12 +12,15 @@ import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TopicComponent } from './landing-page/topic/topic.component';
 import { CitiesComponent } from './home-page/cities/cities.component';
 import { MatCardModule } from '@angular/material/card';
-import { CityDetailsComponent } from './city-details/city-details.component';
+import { CityDetailsComponent } from './home-page/city-details/city-details.component'
 import { PostsComponent } from './posts/posts.component';
-
 import { CitiesService } from './home-page/cities/cities.service';
 import { PostService } from './posts/post.service';
 import { PostDetailsComponent } from './post-details/post-details.component';
+
+import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './landing-page/header/search/search.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +31,8 @@ import { PostDetailsComponent } from './post-details/post-details.component';
     CitiesComponent,
     CityDetailsComponent,
     PostsComponent,
-    PostDetailsComponent
+    PostDetailsComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,10 @@ import { PostDetailsComponent } from './post-details/post-details.component';
     RouterModule,
     NgbModule,
     NgbCarouselModule,
-    MatCardModule
+    MatCardModule,
+    FormsModule,
+    HttpClientModule
+
   ],
   providers: [CitiesService,PostService],
   bootstrap: [AppComponent]

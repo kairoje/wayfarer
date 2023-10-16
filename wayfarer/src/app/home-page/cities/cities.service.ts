@@ -50,4 +50,16 @@ export class CitiesService {
     }
     return city
   }
+
+  getCityByName(name: string): Promise<any> { 
+    return new Promise((resolve, reject) => {
+      const city = this.cities.find(city => city.name.toLowerCase() === name.toLowerCase());
+      if (city) {
+        city.posts = this.postService.getPostByCityId(city.id);
+        resolve(city);
+      } else {
+        reject('City not found');
+      }
+    });
+  }
 }
