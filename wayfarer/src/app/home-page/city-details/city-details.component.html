@@ -7,6 +7,10 @@
           <h2>{{ city.name }}</h2>
           <h4>{{ city.country }}</h4>
         </mat-card-header>
+        <mat-card-header class="weather-container">
+          <h3>Weather: {{ weatherData?.main?.temp }}</h3>
+          <h4>{{ weatherData?.weather[0]?.description }}</h4>
+        </mat-card-header>
         <img mat-card-lg-image src="{{ city.image }}" alt="" />
       </div>
       <div class="posts">
