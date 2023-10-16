@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { CitiesService } from '../home-page/cities/cities.service';
-
 
 @Injectable({
   providedIn: 'root'
@@ -73,28 +71,14 @@ export class PostService {
      return cityPosts.sort((a, b) => b.creationDate.getTime() - a.creationDate.getTime())
   }
 
-  getPostByTitle(partialTitle: string): Promise<any[]> { 
+  getPostByTitle(title: string): Promise<any> { 
     return new Promise((resolve, reject) => {
-      const lowercasePartialTitle = partialTitle.toLowerCase();
-
-      const matchingPosts = this.posts.filter(post => {
-        post.title.toLowerCase().includes(lowercasePartialTitle)
-      });
-
-      if (matchingPosts.length > 0) {
-        resolve(matchingPosts);
+      const post = this.posts.find(post => post.title.toLowerCase() === title.toLowerCase());
+      if (post) {
+        resolve(post);
       } else {
-        reject('No posts found with the given partial title');
+        reject('Post not found');
       }
-    //   const post = this.posts.find(post => post.title.toLowerCase() === title.toLowerCase());
-      // if (post) {
-      //   // post.cityId = this.cityService.getCityById(post.cityId);
-      //   resolve(post);
-      // } else {
-      //   reject('Post not found');
-      // }
-      // console.log('Found post: ', post);
     });
   }
-
 }

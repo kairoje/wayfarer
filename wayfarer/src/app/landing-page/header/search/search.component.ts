@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class SearchComponent {
   post: string = '';
+  cityName: string = '';
   searchSubject: Subject<string> = new Subject();
 
   constructor(private postService: PostService, private router: Router) { }
@@ -18,6 +19,8 @@ export class SearchComponent {
   showSearchBar(): boolean {
     return this.router.url != '/'
   }
+
+  
 
   findPost(postTitle: string) {
     console.log('finding post', postTitle);
