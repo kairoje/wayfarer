@@ -1,0 +1,22 @@
+<div class="city-container">
+  <app-cities></app-cities>
+  <div class="card-container">
+    <mat-card>
+      <div class="city">
+        <mat-card-header>
+          <h2>{{ city.name }}</h2>
+          <h4>{{ city.country }}</h4>
+        </mat-card-header>
+        <img mat-card-lg-image src="{{ city.image }}" alt="" />
+      </div>
+      <div class="posts">
+        <mat-card-header>
+          <h2>Posts</h2>
+        </mat-card-header>
+        <mat-card-content>
+          <app-posts [city]="city"></app-posts>
+        </mat-card-content>
+      </div>
+    </mat-card>
+  </div>
+</div>

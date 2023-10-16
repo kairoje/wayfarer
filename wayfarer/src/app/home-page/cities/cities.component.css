@@ -1,0 +1,27 @@
+.tab-card-wrapper {
+  background-color: #A4CCFF;
+  gap: 15px;
+  width: 400px;
+  height: 100vh;
+  font-family: 'Raleway', 'sans-serif';
+}
+mat-card-header h2{
+  font-family: 'Raleway','sans-serif';
+  font-size: 2rem;
+}
+.city-card{
+  color: white;
+}
+
+.tab-card-content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background-color: white;
+  color: black;
+}
+
+.tab-card-content h3{
+  font-family: 'Raleway','sans-serif';
+  font-size: 1.6rem;
+}

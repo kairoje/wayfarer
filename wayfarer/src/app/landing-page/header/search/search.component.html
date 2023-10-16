@@ -1,0 +1,7 @@
+<input 
+  *ngIf="showSearchBar()"
+  [(ngModel)]="post"
+  type="text" 
+  placeholder="Search" 
+  (keyup)="findPost(post)" 
+>

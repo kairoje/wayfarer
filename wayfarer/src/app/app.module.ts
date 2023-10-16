@@ -9,14 +9,28 @@ import { HeroComponent } from './landing-page/hero/hero.component';
 import { RouterModule } from '@angular/router';
 import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TopicComponent } from './landing-page/topic/topic.component';
+import { CitiesComponent } from './home-page/cities/cities.component';
+import { MatCardModule } from '@angular/material/card';
+import { CityDetailsComponent } from './home-page/city-details/city-details.component'
+import { PostsComponent } from './posts/posts.component';
 
+import { CitiesService } from './home-page/cities/cities.service';
+import { PostService } from './posts/post.service';
+import { PostDetailsComponent } from './post-details/post-details.component';
+import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './landing-page/header/search/search.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     HeroComponent,
     AppComponent,
-    TopicComponent
+    TopicComponent,
+    CitiesComponent,
+    CityDetailsComponent,
+    PostsComponent,
+    PostDetailsComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -24,9 +38,11 @@ import { TopicComponent } from './landing-page/topic/topic.component';
     BrowserAnimationsModule,
     RouterModule,
     NgbModule,
-    NgbCarouselModule
+    NgbCarouselModule,
+    MatCardModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [CitiesService,PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

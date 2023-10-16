@@ -1,0 +1,14 @@
+<mat-card class="tab-card-wrapper">
+  <mat-card-header><h2>Cities</h2></mat-card-header>
+
+  <mat-card-content class="card-container" *ngFor="let city of cities">
+    <a [routerLink]="['/home', city.id]">
+      <mat-card class="city-card">
+        <mat-card-content class="tab-card-content">
+          <img mat-card-sm-image src="{{ city.image }}" />
+          <h3>{{ city.name }}</h3>
+        </mat-card-content>
+      </mat-card>
+    </a>
+  </mat-card-content>
+</mat-card>
