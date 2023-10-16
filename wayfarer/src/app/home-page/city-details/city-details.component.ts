@@ -34,6 +34,14 @@ export class CityDetailsComponent implements OnInit{
     this.router.navigate(['/post', postId]);
   }
 
+  convertToCelsius(tempInKelvin: number): number {
+    // convert from Kelvin to Celcius
+    const tempInCelsius = tempInKelvin - 273.15;
+    // convert from Celsius to Fahrenheit
+    const tempInFahrenheit = Math.round((tempInCelsius * 9/5) + 32);
+    return tempInFahrenheit;
+  }
+
   ngOnInit(): void {
       this.route.params.subscribe(params => {
         const cityId = params['cityId'];
@@ -44,7 +52,7 @@ export class CityDetailsComponent implements OnInit{
           this.weatherData = data;
           console.log('Weather data:', this.weatherData)
         })
-        
+
         console.log("All posts for city:",this.city.posts)
         this.filteredPosts = [...this.city.posts];
       })
