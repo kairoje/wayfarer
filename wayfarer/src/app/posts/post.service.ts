@@ -74,7 +74,7 @@ export class PostService {
     {
       id: '8',
       image: "../assets/images/boy-icon.png",
-      title: 'This is a title example that is way longer than 200 characters, therefore the post should create an ellipsis instead of posting the entire title. This display is an example of the title being cut off after 200 characters.',
+      title: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qua',
       author: 'Author 8',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
       creationDate: new Date('2023-08-23T14:30:00'),

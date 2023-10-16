@@ -15,4 +15,8 @@ export class PostsComponent {
     console.log('Received city in PostsComponent:', this.city);
   }
 
+  showAlert(errorMessage: string) {
+    alert(errorMessage); 
+  }
+
 }

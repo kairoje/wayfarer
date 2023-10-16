@@ -8,10 +8,18 @@
             <h3 *ngIf="post.title.length > 1 && post.title.length <= 200">
               {{ post.title }}
             </h3>
-            <ng-container *ngIf="post.title.length <= 1 || post.title.length > 200">
-              <div class="error-message">Invalid Title</div>
+            <ng-container *ngIf="post.title.length <= 1">
+              <div class="error-message">
+                <h3 (click)="showAlert('Title is too short!')">ERROR: Title is too short</h3>
+              </div>
+            </ng-container>
+            <ng-container *ngIf="post.title.length > 200">
+              <div class="error-message">
+                <h3 (click)="showAlert('Title is too long!')">ERROR: Title is too long</h3>
+              </div>
             </ng-container>
           </a>
+          
           
           <p>{{ post.description }}</p>
         </mat-card-content>
