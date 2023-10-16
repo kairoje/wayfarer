@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { CitiesService } from '../../../home-page/cities/cities.service';
+import { PostService } from 'src/app/posts/post.service';
 import { Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,31 +10,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
-  city: string = '';
+  post: string = '';
   searchSubject: Subject<string> = new Subject();
 
-  constructor(private citiesService: CitiesService, private router: Router) { }
+  constructor(private postService: PostService, private router: Router) { }
 
   showSearchBar(): boolean {
     return this.router.url != '/'
   }
 
-  findCity(cityName: string) {
-    console.log('finding city', cityName);
-    this.searchSubject.next(cityName);
+  findPost(postTitle: string) {
+    console.log('finding post', postTitle);
+    this.searchSubject.next(postTitle);
   }
 
   ngOnInit(): void {
     this.searchSubject
-    .pipe(debounceTime(1000), distinctUntilChanged())
-    .subscribe(cityName => {
-      this.citiesService.getCityByName(cityName)
-      .then(city => {
-        console.log('Found city:', city);
-      })
-      .catch(error => {
-        console.error('Error finding city:', error);
-      })
-    })
+    .pipe(
+      debounceTime(1000), 
+      distinctUntilChanged(), 
+      switchMap(async (partialTitle: string) => {
+      try {
+        const matchingPosts = await this.postService.getPostByTitle(partialTitle);
+        console.log('Found posts:', matchingPosts);
+      } catch (error) {
+        console.error('Error finding posts:', error);
+      }
+    }))
+    .subscribe()
   }
 }

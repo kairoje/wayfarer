@@ -1,6 +1,7 @@
-<input *ngIf="showSearchBar()"
-  [(ngModel)]="city"
+<input 
+  *ngIf="showSearchBar()"
+  [(ngModel)]="post"
   type="text" 
   placeholder="Search" 
-  (keyup)="findCity(city)" 
+  (keyup)="findPost(post)" 
 >
