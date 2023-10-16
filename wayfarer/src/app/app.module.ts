@@ -20,6 +20,8 @@ import { PostDetailsComponent } from './post-details/post-details.component';
 
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './landing-page/header/search/search.component';
+import { NgxMapboxGLModule } from 'ngx-mapbox-gl';
+
 
 
 @NgModule({
@@ -43,7 +45,8 @@ import { SearchComponent } from './landing-page/header/search/search.component';
     NgbCarouselModule,
     MatCardModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMapboxGLModule
 
   ],
   providers: [CitiesService,PostService],

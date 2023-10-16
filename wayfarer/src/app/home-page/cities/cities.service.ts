@@ -12,6 +12,8 @@ export class CitiesService {
       name: 'Chicago',
       country: 'USA',
       image: "../assets/images/chicago.jpg",
+      lat: 41.878113,
+      lng: -87.629798,
       posts: [{}],
     },
     {
@@ -19,6 +21,8 @@ export class CitiesService {
       name: 'Seattle',
       country: 'USA',
       image: "../assets/images/seattle.jpg",
+      lat: 47.606209,
+      lng: -122.332071,
       posts: [{}],
     },
     {
@@ -26,6 +30,8 @@ export class CitiesService {
       name: 'San Francisco',
       country: 'USA',
       image: "../assets/images/san-francisco.png",
+      lat: 37.774929,
+      lng: -122.419415,
       posts: [{}],
     },
     {
@@ -33,6 +39,8 @@ export class CitiesService {
       name: 'London',
       country: 'United Kingdom',
       image: "../assets/images/london.png",
+      lat: 51.507350,
+      lng: -0.127750,
       posts: [{}]
     }
   ]
