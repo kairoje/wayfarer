@@ -9,10 +9,9 @@
               {{ post.title }}
             </h3>
             <ng-container *ngIf="post.title.length <= 1 || post.title.length > 200">
-              <div class="error-message">Invalid Title</div>
+              <h3 class="error-message">Invalid Title</h3>
             </ng-container>
           </a>
-          
           <p>{{ post.description }}</p>
         </mat-card-content>
       </mat-card-content>
