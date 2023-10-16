@@ -4,13 +4,15 @@
       <mat-card-content class="tab-card-content">
         <img mat-card-sm-image src="{{ post.image }}" />
         <mat-card-content class="post-content">
-        <a [routerLink]="['/post', post.id]"><h3>{{
-          post.title.length > 1
-            ? (post.title.length > 200
-              ? post.title.substr(0, post.title.lastIndexOf(' ', 200)) + '...'
-              : post.title)
-            : '"Enter Title Here"'
-        }}</h3></a>
+          <a [routerLink]="['/post', post.id]">
+            <h3 *ngIf="post.title.length > 1 && post.title.length <= 200">
+              {{ post.title }}
+            </h3>
+            <ng-container *ngIf="post.title.length <= 1 || post.title.length > 200">
+              <div class="error-message">Invalid Title</div>
+            </ng-container>
+          </a>
+          
           <p>{{ post.description }}</p>
         </mat-card-content>
       </mat-card-content>
