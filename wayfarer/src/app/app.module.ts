@@ -14,12 +14,13 @@ import { CitiesComponent } from './home-page/cities/cities.component';
 import { MatCardModule } from '@angular/material/card';
 import { CityDetailsComponent } from './home-page/city-details/city-details.component'
 import { PostsComponent } from './posts/posts.component';
-
 import { CitiesService } from './home-page/cities/cities.service';
 import { PostService } from './posts/post.service';
 import { PostDetailsComponent } from './post-details/post-details.component';
+
 import { FormsModule } from '@angular/forms';
 import { SearchComponent } from './landing-page/header/search/search.component';
+
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { SearchComponent } from './landing-page/header/search/search.component';
     MatCardModule,
     FormsModule,
     HttpClientModule
+
   ],
   providers: [CitiesService,PostService],
   bootstrap: [AppComponent]

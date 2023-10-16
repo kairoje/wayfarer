@@ -13,6 +13,18 @@
         <mat-card-header>
           <h2>Posts</h2>
         </mat-card-header>
+        <app-search id="searchbar"(searchEvent)="onSearch($event)"></app-search>
+        <div class="select-wrapper">
+          <select
+            *ngIf="filteredPosts.length > 0 && searchTerm"
+            (change)="onPostSelect($event)"
+          >
+            <option value="" disabled selected>Select a post...</option>
+            <option *ngFor="let post of filteredPosts" [value]="post.title">
+              {{ post.title }}
+            </option>
+          </select>
+        </div>
         <mat-card-content>
           <app-posts [city]="city"></app-posts>
         </mat-card-content>

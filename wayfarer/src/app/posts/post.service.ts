@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 
+import { Post } from './post.model';
+
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
 
-  private posts = [
+  private posts: Post[] = [
     {
       id: '1',
       image: "../assets/images/boy-icon.png",
@@ -94,20 +96,9 @@ export class PostService {
      return cityPosts.sort((a, b) => b.creationDate.getTime() - a.creationDate.getTime())
   }
 
-  getPostByTitle(title: string): Promise<any> { 
-    return new Promise((resolve, reject) => {
-      const post = this.posts.find(post => post.title.toLowerCase() === title.toLowerCase());
-      if (post) {
-        resolve(post);
-      } else {
-        reject('Post not found');
-      }
-    });
-  }
 
   getPostById(postId: string) {
     return this.posts.find(post => post.id === postId)
   }
-
 
 }
