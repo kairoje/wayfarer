@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import { CitiesService } from '../home-page/cities/cities.service';
-
+import { Post } from './post.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
 
-  private posts = [
+  private posts: Post[] = [
     {
       id: '1',
       image: "../assets/images/boy-icon.png",
@@ -71,30 +70,6 @@ export class PostService {
   getPostByCityId(id: string) {
      const cityPosts = this.posts.filter(post => post.cityId === id);
      return cityPosts.sort((a, b) => b.creationDate.getTime() - a.creationDate.getTime())
-  }
-
-  getPostByTitle(partialTitle: string): Promise<any[]> { 
-    return new Promise((resolve, reject) => {
-      const lowercasePartialTitle = partialTitle.toLowerCase();
-
-      const matchingPosts = this.posts.filter(post => {
-        post.title.toLowerCase().includes(lowercasePartialTitle)
-      });
-
-      if (matchingPosts.length > 0) {
-        resolve(matchingPosts);
-      } else {
-        reject('No posts found with the given partial title');
-      }
-    //   const post = this.posts.find(post => post.title.toLowerCase() === title.toLowerCase());
-      // if (post) {
-      //   // post.cityId = this.cityService.getCityById(post.cityId);
-      //   resolve(post);
-      // } else {
-      //   reject('Post not found');
-      // }
-      // console.log('Found post: ', post);
-    });
   }
 
 }

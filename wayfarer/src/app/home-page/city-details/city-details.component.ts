@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CitiesService } from '../cities/cities.service';
 import { ActivatedRoute } from '@angular/router';
+import { Post } from 'src/app/posts/post.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-city-details',
@@ -10,13 +12,27 @@ import { ActivatedRoute } from '@angular/router';
 export class CityDetailsComponent implements OnInit{
 
   city: any;
-  
-  constructor(private citiesService: CitiesService, private route: ActivatedRoute) {}
+  filteredPosts: Post[] = [];
+  searchTerm: string = '';
+
+  constructor(private citiesService: CitiesService, private route: ActivatedRoute, private router: Router) {}
+
+  onSearch(query: string){
+    this.searchTerm = query;
+    this.filteredPosts = this.city.posts.filter((post: { title: string; }) => post.title.toLowerCase().includes(query.toLowerCase()));
+    console.log("Filtered posts:",this.filteredPosts)
+  }
+  onPostSelect(event: any) :void {
+    const postId = event.target.value;
+    this.router.navigate(['/post', postId]);
+  }
 
   ngOnInit(): void {
       this.route.params.subscribe(params => {
         const cityId = params['cityId'];
         this.city = this.citiesService.getCityById(cityId)
+        console.log("All posts for city:",this.city.posts)
+        this.filteredPosts = [...this.city.posts];
       })
   }
 }

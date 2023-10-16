@@ -12,7 +12,6 @@ mat-card-header h2{
 .city-card{
   color: white;
 }
-
 .tab-card-content {
   display: flex;
   align-items: center;
@@ -24,4 +23,7 @@ mat-card-header h2{
 .tab-card-content h3{
   font-family: 'Raleway','sans-serif';
   font-size: 1.6rem;
+}
+a {
+  text-decoration: none;
 }

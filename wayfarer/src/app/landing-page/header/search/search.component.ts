@@ -1,7 +1,4 @@
-import { Component } from '@angular/core';
-import { PostService } from 'src/app/posts/post.service';
-import { Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,9 +8,9 @@ import { Router } from '@angular/router';
 })
 export class SearchComponent {
   post: string = '';
-  searchSubject: Subject<string> = new Subject();
+  @Output() searchEvent = new EventEmitter<string>();
 
-  constructor(private postService: PostService, private router: Router) { }
+  constructor(private router: Router) { }
 
   showSearchBar(): boolean {
     return this.router.url != '/'
@@ -21,22 +18,8 @@ export class SearchComponent {
 
   findPost(postTitle: string) {
     console.log('finding post', postTitle);
-    this.searchSubject.next(postTitle);
+    this.searchEvent.emit(postTitle);
   }
+  
 
-  ngOnInit(): void {
-    this.searchSubject
-    .pipe(
-      debounceTime(1000), 
-      distinctUntilChanged(), 
-      switchMap(async (partialTitle: string) => {
-      try {
-        const matchingPosts = await this.postService.getPostByTitle(partialTitle);
-        console.log('Found posts:', matchingPosts);
-      } catch (error) {
-        console.error('Error finding posts:', error);
-      }
-    }))
-    .subscribe()
-  }
 }
