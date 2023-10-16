@@ -1,0 +1,8 @@
+.header {
+    display: flex;
+    flex-direction: column;
+}
+
+.author img{
+    width: 200px;
+}
