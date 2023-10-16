@@ -64,6 +64,22 @@ export class PostService {
       creationDate: new Date('2023-08-23T14:30:00'),
       cityId: '4',
     },
+    {
+      id: '8',
+      image: "../assets/images/boy-icon.png",
+      title: 'This is a title example that is way longer than 200 characters, therefore the post should create an ellipsis instead of posting the entire title. This display is an example of the title being cut off after 200 characters.',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      creationDate: new Date('2023-08-23T14:30:00'),
+      cityId: '4',
+    },
+    {
+      id: '9',
+      image: "../assets/images/boy-icon.png",
+      title: '',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+      creationDate: new Date('2023-08-23T14:30:00'),
+      cityId: '4',
+    },
   ]
 
   constructor() { }
