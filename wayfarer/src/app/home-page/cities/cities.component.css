@@ -68,3 +68,14 @@ mgl-popup, h3{
   }
 
 }
+@media screen and (max-width: 840px) {
+  mgl-map {
+    display: none;
+  }
+  mgl-popup {
+    display: none;
+  }
+  .city-list {
+    width: 100%;
+  }
+}
