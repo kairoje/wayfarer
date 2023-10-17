@@ -11,7 +11,6 @@ Welcome to Wayfarer, your ultimate travel companion! Wayfarer is a web applicati
 
 ## Technologies Used
 - **Frontend:** Angular (HTML, CSS, TypeScript)
-- **Backend:** Node.js, Express.js, MongoDB
 - **External APIs:** Mapbox, OpenWeatherMap
 
 ## Installation
