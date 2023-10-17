@@ -27,3 +27,7 @@ mat-card-header h2{
 a {
   text-decoration: none;
 }
+
+.mat-mdc-card-content.tab-card-content:hover {
+  background-color: #feaf8b;
+}
