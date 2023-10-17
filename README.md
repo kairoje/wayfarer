@@ -29,7 +29,7 @@ Contributions are welcome! If you find a bug, have a suggestion, or want to add 
 - **Rick Maya:** [GitHub Profile](https://github.com/rickstylz01)
 - **Ashley Shakir:** [GitHub Profile](https://github.com/ashleyshakir)
 - **Kairo Evans:** [GitHub Profile](https://github.com/kairoje)
-- **Courtney Moreland:** [GitHub Profile]()
+- **Courtney Moreland:** [GitHub Profile](https://github.com/courtneymcodes)
 
 ## License
 This project was created using General Assembly's project guidelines.
