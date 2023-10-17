@@ -27,22 +27,6 @@ export class CitiesComponent implements OnInit{
     const activeRoute = this.getActiveRoute(this.activatedRoute);
     this.toggleElementVisibility(activeRoute.snapshot.params['cityId']);
   }
-  toggleElementVisibility(id: string | undefined) {
-    console.log('ID:', id);
-    if (id) {
-      this.showElement = false;
-    } else {
-      this.showElement = true;
-    }
-  }
-  // Helper function to get the deepest child route
-  getActiveRoute(route: ActivatedRoute): ActivatedRoute {
-    while (route.firstChild) {
-      route = route.firstChild;
-    }
-    return route;
-  }
-    
   navigateToCity(cityId: string) {
     this.router.navigate(['/home', cityId]);
     this.showElement = false;
@@ -60,5 +44,21 @@ export class CitiesComponent implements OnInit{
       }
     })
   }
+  toggleElementVisibility(id: string | undefined) {
+    console.log('ID:', id);
+    if (id) {
+      this.showElement = false;
+    } else {
+      this.showElement = true;
+    }
+  }
+  // Helper function to get the deepest child route
+  getActiveRoute(route: ActivatedRoute): ActivatedRoute {
+    while (route.firstChild) {
+      route = route.firstChild;
+    }
+    return route;
+  }
+    
 
 }
