@@ -88,7 +88,7 @@ select::after {
 /* --Tablets-- */
 @media screen and (min-width: 768px) {
     .city-container {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .card-container {
