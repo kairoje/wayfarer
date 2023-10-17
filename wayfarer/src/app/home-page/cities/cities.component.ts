@@ -1,24 +1,51 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CitiesService } from './cities.service';
 import { WeatherService } from 'src/app/weather.service';
-import {Router } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cities',
   templateUrl: './cities.component.html',
   styleUrls: ['./cities.component.css']
 })
-export class CitiesComponent {
-
+export class CitiesComponent implements OnInit{
+  showElement: boolean = true;
   cities: any[] = [];
 
-  constructor(private citiesService: CitiesService, private weatherService: WeatherService, private route : Router) {}
+  constructor(private citiesService: CitiesService, private weatherService: WeatherService, private router : Router, private activatedRoute: ActivatedRoute) {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(() => {
+      const activeRoute = this.getActiveRoute(this.activatedRoute);
+      this.toggleElementVisibility(activeRoute.snapshot.params['cityId']);
+    });
+  }
 
   ngOnInit(): void {
     this.cities = this.citiesService.getCities();
+    const activeRoute = this.getActiveRoute(this.activatedRoute);
+    this.toggleElementVisibility(activeRoute.snapshot.params['cityId']);
   }
+  toggleElementVisibility(id: string | undefined) {
+    console.log('ID:', id);
+    if (id) {
+      this.showElement = false;
+    } else {
+      this.showElement = true;
+    }
+  }
+  // Helper function to get the deepest child route
+  getActiveRoute(route: ActivatedRoute): ActivatedRoute {
+    while (route.firstChild) {
+      route = route.firstChild;
+    }
+    return route;
+  }
+    
   navigateToCity(cityId: string) {
-    this.route.navigate(['/home', cityId]);
+    this.router.navigate(['/home', cityId]);
+    this.showElement = false;
     console.log("Marker clicked")
   }
 
@@ -33,4 +60,5 @@ export class CitiesComponent {
       }
     })
   }
+
 }

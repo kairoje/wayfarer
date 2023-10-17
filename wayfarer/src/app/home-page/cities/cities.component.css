@@ -8,6 +8,7 @@ mgl-popup, h3{
   margin-bottom: 0;
   font-family: 'Raleway','sans-serif';
   color:#5899ee;
+  cursor: pointer;
 }
 .tab-card-wrapper {
   background-color: #A4CCFF;

@@ -12,7 +12,8 @@
       </a>
     </mat-card-content>
   </mat-card-content>
-  <mgl-map
+  <mgl-map 
+    *ngIf="showElement"
     [style]="'mapbox://styles/mapbox/streets-v11'"
     [zoom]="[3]"
     [center]="[-98.5795, 39.8283]"
