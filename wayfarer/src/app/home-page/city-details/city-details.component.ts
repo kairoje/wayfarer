@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CitiesService } from '../cities/cities.service';
 import { ActivatedRoute } from '@angular/router';
+import { WeatherService } from 'src/app/weather.service';
 import { Post } from 'src/app/posts/post.model';
 import { Router } from '@angular/router';
 
@@ -12,10 +13,16 @@ import { Router } from '@angular/router';
 export class CityDetailsComponent implements OnInit{
 
   city: any;
+  weatherData: any;
   filteredPosts: Post[] = [];
   searchTerm: string = '';
 
-  constructor(private citiesService: CitiesService, private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private citiesService: CitiesService, 
+    private route: ActivatedRoute, 
+    private router: Router,
+    private weatherService: WeatherService
+    ) {}
 
   onSearch(query: string){
     this.searchTerm = query;
@@ -27,10 +34,25 @@ export class CityDetailsComponent implements OnInit{
     this.router.navigate(['/post', postId]);
   }
 
+  convertToCelsius(tempInKelvin: number): number {
+    // convert from Kelvin to Celcius
+    const tempInCelsius = tempInKelvin - 273.15;
+    // convert from Celsius to Fahrenheit
+    const tempInFahrenheit = Math.round((tempInCelsius * 9/5) + 32);
+    return tempInFahrenheit;
+  }
+
   ngOnInit(): void {
       this.route.params.subscribe(params => {
         const cityId = params['cityId'];
         this.city = this.citiesService.getCityById(cityId)
+
+        // Get weather data for the city
+        this.weatherService.getWeather(this.city.name).subscribe(data => {
+          this.weatherData = data;
+          console.log('Weather data:', this.weatherData)
+        })
+
         console.log("All posts for city:",this.city.posts)
         this.filteredPosts = [...this.city.posts];
       })

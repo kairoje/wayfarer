@@ -4,6 +4,7 @@ import { WeatherService } from 'src/app/weather.service';
 import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs/operators';
 
+
 @Component({
   selector: 'app-cities',
   templateUrl: './cities.component.html',
@@ -59,6 +60,4 @@ export class CitiesComponent implements OnInit{
     }
     return route;
   }
-    
-
 }
