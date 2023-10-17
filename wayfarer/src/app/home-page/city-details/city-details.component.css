@@ -1,15 +1,15 @@
+.city-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}  
+
 .card-container {
     display: flex;
     flex-direction: column;
     align-items: space-around;
-    width: calc(67% - 2rem);
     height: 100vh;
 }
-.city-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}  
 
 mat-card {
     display: flex;
@@ -19,6 +19,7 @@ mat-card {
 mat-card .city{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -40,8 +41,8 @@ h2, h3{
     background-color: white;
 }
 
-/* Styling for the select element */
-select {
+/* Styling for the select element  */
+ select {
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
@@ -82,8 +83,29 @@ select::after {
 .select-wrapper {
     position: relative; /* This is to position the pseudo-element arrow correctly */
     display: inline-block;
+} 
+
+/* --Tablets-- */
+@media screen and (min-width: 768px) {
+    .city-container {
+        flex-direction: row;
+    }
+
+    .card-container {
+        width: calc(67% - 2rem);
+    } 
 }
 
 
+/* --Large laptops-- */
+@media screen and (min-width: 1440px) {
+    .city-container{
+        flex-direction: row;
+    } 
+
+    .card-container {
+        width: calc(67% - 2rem);
+    } 
+}
 
 
