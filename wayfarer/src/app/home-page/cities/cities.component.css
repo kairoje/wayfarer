@@ -37,7 +37,7 @@ a {
 }
 
 mgl-map {
-  height: 100vh; 
+  /* height: 100vh;  */
   width: 70%;
   padding: 20px;
 }
@@ -52,7 +52,7 @@ mgl-popup, h3{
 @media screen and (min-width: 768px) {
   .tab-card-wrapper {
     width: 100%;
-    height: 630px;
+    height: 100vh;
   }
 }
 
@@ -60,6 +60,6 @@ mgl-popup, h3{
 @media screen and (min-width: 1440px) {
   .tab-card-wrapper {
     width: 100%;
-    height: 630px;
+    height: 100vh;
   }
 }
