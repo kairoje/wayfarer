@@ -24,7 +24,7 @@
             (change)="onPostSelect($event)"
           >
             <option value="" disabled selected>Select a post...</option>
-            <option *ngFor="let post of filteredPosts" [value]="post.title">
+            <option *ngFor="let post of filteredPosts" [value]="post.id">
               {{ post.title }}
             </option>
           </select>
