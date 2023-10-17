@@ -1,0 +1,33 @@
+.tab-card-wrapper {
+    background-color: white;
+    gap: 15px;
+    width: 100%;
+    font-family: 'Raleway', 'sans-serif';
+  }
+  .city-card {
+    color: white;
+  }
+  .card-container{
+    margin-bottom: 10px;
+  }
+  .tab-card-content {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background-color: white;
+    color: black;
+  }
+  a {
+    text-decoration: none;
+    font-family: 'Raleway','sans-serif';
+    font-size: 1.6rem;
+
+  }
+
+  .error-message {
+    color: red;
+    font-weight: bold;
+  }
+
+
+

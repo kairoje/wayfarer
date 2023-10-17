@@ -1,0 +1,29 @@
+<mat-card class="tab-card-wrapper">
+  <mat-card-content class="city-list">
+    <mat-card-header><h2>Cities</h2></mat-card-header>
+    <mat-card-content class="card-container" *ngFor="let city of cities">
+      <a [routerLink]="['/home', city.id]">
+        <mat-card class="city-card" (click)="getCityWeather(city.name)">
+          <mat-card-content class="tab-card-content">
+            <img mat-card-sm-image src="{{ city.image }}" />
+            <h3>{{ city.name }}</h3>
+          </mat-card-content>
+        </mat-card>
+      </a>
+    </mat-card-content>
+  </mat-card-content>
+  <mgl-map 
+    *ngIf="showElement"
+    [style]="'mapbox://styles/mapbox/streets-v11'"
+    [zoom]="[3]"
+    [center]="[-98.5795, 39.8283]"
+  >
+    <mgl-popup
+      *ngFor="let city of cities"
+      [lngLat]="[city.lng, city.lat]"
+      [closeOnClick]="false"
+    >
+      <h3 (click)="navigateToCity(city.id)">Visit {{ city.name }}</h3>
+    </mgl-popup>
+  </mgl-map>
+</mat-card>

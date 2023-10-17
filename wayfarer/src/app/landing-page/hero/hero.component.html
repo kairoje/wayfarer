@@ -1,0 +1,15 @@
+<ngb-carousel [interval]="3000">
+  <ng-template ngbSlide *ngFor="let image of images">
+    <div class="carousel-wrapper">
+      <img src="assets/images/{{image.name}}" [alt]="image.caption">
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+<h1>Wayfarer is...</h1>
+
+<div id="topic_container">
+  <div id="topic_cards" *ngFor="let topic of topics">
+    <app-topic [topic]="topic"></app-topic>
+  </div>
+</div>

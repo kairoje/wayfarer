@@ -1,0 +1,111 @@
+.city-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}  
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+}
+
+mat-card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    height: fit-content;
+}
+mat-card .city{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+mat-card-header {
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+}
+
+h2, h3{
+    font-family: Raleway, sans-serif;
+    font-size: 30px;
+}
+
+.card-container img{
+    width: 400px;
+    height: auto;
+    padding: 8px;
+    background-color: white;
+}
+
+/* Styling for the select element  */
+ select {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    color: #555;
+    background-color: #f8f8f8;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    appearance: none; /* This removes the default arrow of the select element in some browsers */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: background-color 0.2s ease;
+}
+
+/* Styling for the select element when it's focused */
+select:focus {
+    background-color: #e8e8e8;
+}
+
+/* Optional: Add a custom arrow using a pseudo-element */
+select::-ms-expand {
+    display: none; /* This hides the default arrow in IE */
+}
+
+select::after {
+    content: "▼";
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Makes the pseudo-element non-interactive */
+    font-size: 10px;
+    color: #555;
+}
+
+/* If you're using a wrapper around the select element */
+.select-wrapper {
+    position: relative; /* This is to position the pseudo-element arrow correctly */
+    display: inline-block;
+} 
+
+/* --Tablets-- */
+@media screen and (min-width: 768px) {
+    .city-container {
+        flex-direction: row;
+    }
+
+    .card-container {
+        width: calc(67% - 2rem);
+    } 
+}
+
+
+/* --Large laptops-- */
+@media screen and (min-width: 1440px) {
+    .city-container{
+        flex-direction: row;
+    } 
+
+    .card-container {
+        width: calc(67% - 2rem);
+    } 
+}
+
+
