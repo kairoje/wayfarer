@@ -39,7 +39,7 @@ a {
 
 .mat-mdc-card-content.tab-card-content:hover {
   background-color: #feaf8b;
-
+}
 mgl-map {
   /* height: 100vh;  */
   width: 70%;
