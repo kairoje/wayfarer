@@ -1,0 +1,42 @@
+#header {
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+#header img {
+  height: 50px;
+  margin-right: 1rem;
+  transition: all 0.5s ease;
+}
+#header img:hover, #header img:focus {
+  transform: scale(1.1);
+}
+#header h1 {
+  margin: 0;
+  color: #333;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+}
+#home-link {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.4rem;
+  color: #333;
+  text-decoration: none;
+  background-color: #f9f9f9;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 1rem;
+
+}
+#home-link:hover, #home-link:focus {
+  transform: scale(.98);
+}

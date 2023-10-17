@@ -1,0 +1,35 @@
+<div class="tab-card-wrapper">
+  <mat-card-content class="card-container" *ngFor="let post of city.posts">
+    <mat-card class="city-card">
+      <mat-card-content class="tab-card-content">
+        <img mat-card-sm-image src="{{ post.image }}" />
+        <mat-card-content class="post-content">
+          <a [routerLink]="['/post', post.id]">
+            <h3 *ngIf="post.title.length > 1 && post.title.length <= 200">
+              {{ post.title }}
+            </h3>
+
+            <ng-container *ngIf="post.title.length <= 1">
+              <div class="error-message">
+                <h3 (click)="showAlert('Title is too short!')">ERROR: Title is too short</h3>
+              </div>
+            </ng-container>
+            <ng-container *ngIf="post.title.length > 200">
+              <div class="error-message">
+                <h3 (click)="showAlert('Title is too long!')">ERROR: Title is too long</h3>
+              </div>
+            </ng-container>
+          </a>
+          
+          
+            <ng-container *ngIf="post.title.length <= 1 || post.title.length > 200">
+              <h3 class="error-message">Invalid Title</h3>
+            </ng-container>
+          </a>
+
+          <p>{{ post.description }}</p>
+        </mat-card-content>
+      </mat-card-content>
+    </mat-card>
+  </mat-card-content>
+</div>
