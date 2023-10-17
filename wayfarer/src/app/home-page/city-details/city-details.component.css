@@ -2,14 +2,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
 }  
 
 .card-container {
     display: flex;
     flex-direction: column;
     align-items: space-around;
-    height: inherit;
 }
 
 mat-card {
